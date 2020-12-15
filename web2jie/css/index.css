@@ -1,0 +1,250 @@
+body {
+    line-height: 1;
+    background: rgb(250, 250, 250);
+}
+
+.zong{
+    overflow: hidden;
+}
+
+img {
+    vertical-align: bottom;
+}
+
+.container {
+    width: 1202px;
+    height: 245px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+/* 头部样式 */
+.header-top {
+    height: 32px;
+    border-bottom: 1px solid rgba(218, 218, 218, 1);
+}
+
+.header__info {
+    line-height: 32px;
+}
+
+.header__info li {
+    float: left;
+    margin-left: 27px;
+    background: no-repeat left center;
+}
+.header__info li a{
+	color:#000;
+}
+.header__info li a:hover{
+	color:  #00FFFF
+}
+li.iphone {
+    padding-left: 15px;
+    background-image: url(../img/iphone.png);
+}
+
+li.weixin {
+    padding-left: 23px;
+    background-image: url(../img/weixin.png);
+}
+
+.header-bottom {
+    height: 100px;
+}
+
+.logo {
+    width: 100px;
+    height: 70px;
+    margin-top: 14px;
+}
+
+.nav {
+    margin-top: 39px;
+}
+
+.nav li {
+    float: left;
+    padding: 0 30px;
+    border-right: 2px solid rgba(0, 0, 0, 1);
+}
+.nav li a:hover {
+	color: #00FFFF
+}
+
+li.first {
+    padding-left: 100px;
+}
+
+li.last {
+    border: none;
+    padding-right: 20px;
+}
+
+.nav a {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+}
+
+.form {
+    margin-top: 34px;
+}
+
+.form * {
+    float: left;
+    /* vertical-align: middle; */
+}
+
+.form .search {
+    width: 147px;
+    height: 11px;
+    border: 1px solid rgba(208, 61, 61, 1);
+    padding: 9px;
+}
+
+.form .submit {
+    width: 31px;
+    height: 31px;
+    border: 1px solid rgba(208, 61, 61, 1);
+    background: rgba(208, 61, 61, 1) url(../img/search.png) no-repeat center center;
+    cursor: pointer;
+}
+
+:focus {
+    outline: none;
+}
+/* banner样式 */
+.box {
+    width: 1200px;
+    height: 397px;
+    border: 1px solid red;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.slider{
+    width: 12000px;
+    position: absolute;
+    left: -1200px;
+}
+.slide{
+    width: 1200px;
+    overflow: hidden;
+    float: left;
+}
+.slide img{
+    width: 1200px;
+    height: 397px;
+}
+.box>span{
+    display: block;
+    width: 30px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    top: 175px;
+    line-height: 50px;
+    background: rgb(255,0,0);
+    font-size: 30px;
+    position: absolute;
+    /* display: none; */
+    opacity: 0;
+}
+#left{
+    left: 30px;
+}
+#right{
+    right: 30px;
+}
+.dian{
+    position: absolute;
+    left: 500px;
+    bottom: 20px;
+}
+.dian>li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+.dian .active{
+    background: red;
+}
+
+
+/* 标题样式 */
+.title {
+    margin-top: 100px;
+    font-size: 36px;
+    color: rgba(32, 32, 32, 1);
+    background: url(../img/bg-title.png) no-repeat center center;
+}
+
+.title .small {
+    margin-top: 15px;
+    margin-bottom: 34px;
+    font-size: 20px;
+}
+/* 推荐样式 */
+.tu {
+	width: 290px;
+	height: 200px;
+}
+.one li {
+	padding: 5px;
+	float:left;
+}
+.one p {
+	font-size: 2em;
+	font-family: fangsong;	
+}
+.one p:hover{
+	color: #00FFFF
+}
+.one div{
+	background-color: #FFFFFF
+}
+.tuileft{
+    width: 2404px;
+    height: 210px;
+    position: absolute;
+}
+.tuiright{
+    width: 2404px;
+    height: 210px;
+    position: absolute;
+}
+/* footer样式 */
+.footer {
+    height: 300px;
+    padding-top: 18px;
+    background: rgba(58, 58, 58, 1);
+    text-align: center;
+}
+
+.footer h4 {
+    padding: 38px 0 23px;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+}
+.footer p {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 40px;
+}

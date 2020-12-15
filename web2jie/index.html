@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中国美食</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<style type="text/css">
+		body {
+			background-color: #F0F0F0
+		}
+        #tiao{
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 999;
+            }
+        html,body{
+            height: 100%;
+        }
+        #lo{
+            width: 100px;
+            height: 100px;
+        }
+        #zhu{
+            width: 500px;
+            height: 426px;
+            position: absolute;
+            left: 35%;
+            top: 25%;
+            display: none;
+            z-index: 9999;
+        }
+        #all1{
+            width: 500px;
+            height: 426px;
+            position: relative;
+            background-image: url('img/e.png');
+        }
+        .d1{
+            overflow: hidden;
+        }
+        .d2{
+            height: 15px;
+            clear: both;
+            font-size: 1px;
+            color: gray;
+            padding-top: 14px;
+        }
+        span{
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            margin-left: 80px;
+            font-size: 20px;
+            width: 140px;
+            background-color:rgba(230,230,250,0.7);
+        }
+        .inp{
+            border: none;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            width: 200px;
+            font-size: 30px;
+            outline: none;
+            background-color:rgba(135,206,250,0.6);
+        }
+        #sp1{
+            margin-top: 100px;
+        }
+        #inp1{
+            margin-top: 100px;
+        }
+        .wen{
+            letter-spacing: 0.5em;
+        }
+        #sub1{
+            width: 100px;
+            font-size: 20px;
+            background: rgba(211,211,211,0.6);
+            color: white;
+            height: 25px;
+            border: none;
+            outline: none;
+            margin-left: 80px;
+        }
+        #sub2{
+            width: 100px;
+            font-size: 20px;
+            background: rgba(211,211,211,0.6);
+            color: white;
+            height: 25px;
+            border: none;
+            outline: none;
+            margin-left: 100px;
+        }
+        #cha{
+            background-color: red;
+            height: 30px;
+            width: 30px;
+            font-size: 30px;
+            position: absolute;
+            left: 470px;
+        }
+	</style>
+    <script src="animate.js"></script>
+</head>
+<body>
+    <div id="tiao"><img src="img/logo.jpg" alt="" id="lo"></div>
+	<div class="header">
+        <div class="header-top">
+            <div class="container">
+                <ul class="header__info fr">
+                	<li id="deng"><a href="#">登陆/注册</a></li>
+                	<li class="iphone" id="yidong"><a href="#">移动客户端</a></li>
+                	<li class="weixin" id="weixin"><a href="#">微信</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container header-bottom clear">
+            <img src="img/logo.jpg" alt="logo图" class="logo fl" />
+            <ul class="nav fl clear">
+                <li class="first"><a href="#">鲁菜</a></li>
+                <li><a href="#">川菜</a></li>
+                <li><a href="#">苏菜</a></li>
+                <li><a href="#">粤菜</a></li>
+                <li><a href="#">闽菜</a></li>
+                <li><a href="#">浙菜</a></li>
+                <li><a href="#">湘菜</a></li>
+                <li class="last"><a href="#">徽菜</a></li>
+            </ul>
+            <form class="form clear fr">
+                <input type="text" placeholder="地方美食" class="search" id="serch" />
+                <input type="button" class="submit"  id="sub" />
+            </form>
+        </div>
+    </div>
+    <div id="zhu">
+        <div id="all1">
+        <button id="cha">×</button>
+        <div class="d1">
+            <span class="wen" id="sp1">用户名</span><input type="text" id="inp1" class="inp">
+        </div>
+        <div id="d1" class="d2"></div>
+        <div class="d1">
+            <span class="wen" id="sp2">设置密码</span><input type="password" id="inp2" class="inp">
+        </div>
+        <div id="d2" class="d2"></div>
+        <div id="su">
+        <button id="sub1">立即注册</button>
+        <button id="sub2">已有账号</button>
+    </div>
+    </div>
+    </div>
+    <script>
+        var zhu = document.getElementById('zhu');
+        var deng = document.getElementById('deng');
+        var cha = document.getElementById('cha');
+        var sp1 = document.getElementById('sp1');
+        var sp2 = document.getElementById('sp2');
+        var sub1 = document.getElementById('sub1');
+        var sub2 = document.getElementById('sub2');
+        var yidong = document.getElementById('yidong');
+        var weixin = document.getElementById('weixin');
+        deng.onclick = function(){
+            zhu.style.display = 'block';
+            sp1.innerHTML = "用户名";
+            sp2.innerHTML = "设置密码";
+            sub1.innerHTML = "立即注册";
+            sub2.innerHTML = "已有账号";
+        }
+        yidong.onclick = function(){
+            zhu.style.display = 'block';
+            sp1.innerHTML = "手机号";
+            sp2.innerHTML = "验证码";
+            sub1.innerHTML = "发送验证码";
+            sub2.innerHTML = "重新发送";
+        }
+        weixin.onclick = function(){
+            zhu.style.display = 'block';
+            sp1.innerHTML = "微信号";
+            sp2.innerHTML = "微信密码";
+            sub1.innerHTML = "立即登录";
+            sub2.innerHTML = "快速登录";
+        }
+        cha.onclick = function(){
+            zhu.style.display = 'none';
+        }
+    </script>
+    <div class="box" id="box">
+        <div class="slider" id="slider">
+            <div class="slide"><img src="img/8.jpg" alt=""></div>
+            <div class="slide"><img src="img/1.jpg" alt=""></div>
+            <div class="slide"><img src="img/2.jpg" alt=""></div>
+            <div class="slide"><img src="img/3.jpg" alt=""></div>
+            <div class="slide"><img src="img/4.jpg" alt=""></div>
+            <div class="slide"><img src="img/5.jpg" alt=""></div>
+            <div class="slide"><img src="img/6.jpg" alt=""></div>
+            <div class="slide"><img src="img/7.jpg" alt=""></div>
+            <div class="slide"><img src="img/8.jpg" alt=""></div>
+            <div class="slide"><img src="img/1.jpg" alt=""></div>
+        </div>
+        <span id="left"><</span>
+        <span id="right">></span>
+        <ul class="dian" id="nav">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>    
+    <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">鲁菜——山东</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/lu1.jpg" class="tu">
+    			<div><p>德州扒鸡</p></div>
+    		</li>
+    		<li><img src="img/lu2.jpg" class="tu">
+    			<div><p>糖醋鲤鱼</p></div>
+    		</li>
+    		<li><img src="img/lu3.jpg" class="tu">
+    			<div><p>葱扒海参</p></div>
+    		</li>
+    		<li><img src="img/lu4.jpg" class="tu">
+    			<div><p>九转大肠</p></div>
+    		</li>
+            <li><img src="img/lu1.jpg" class="tu">
+                <div><p>德州扒鸡</p></div>
+            </li>
+            <li><img src="img/lu2.jpg" class="tu">
+                <div><p>糖醋鲤鱼</p></div>
+            </li>
+            <li><img src="img/lu3.jpg" class="tu">
+                <div><p>葱扒海参</p></div>
+            </li>
+            <li><img src="img/lu4.jpg" class="tu">
+                <div><p>九转大肠</p></div>
+            </li>
+    	</ul>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">川菜——四川</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+        <ul class="one clear">
+            <li><img src="img/chuan1.jpg" class="tu">
+                <div><p>鱼香肉丝</p></div>
+            </li>
+            <li><img src="img/chuan2.jpg" class="tu">
+                <div><p>麻婆豆腐</p></div>
+            </li>
+            <li><img src="img/chuan3.jpg" class="tu">
+                <div><p>宫保鸡丁</p></div>
+            </li>
+            <li><img src="img/chuan4.jpg" class="tu">
+                <div><p>夫妻肺片</p></div>
+            </li>
+            <li><img src="img/chuan1.jpg" class="tu">
+                <div><p>鱼香肉丝</p></div>
+            </li>
+            <li><img src="img/chuan2.jpg" class="tu">
+                <div><p>麻婆豆腐</p></div>
+            </li>
+            <li><img src="img/chuan3.jpg" class="tu">
+                <div><p>宫保鸡丁</p></div>
+            </li>
+            <li><img src="img/chuan4.jpg" class="tu">
+                <div><p>夫妻肺片</p></div>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">苏菜——江苏</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/su1.jpg" class="tu">
+    			<div><p>松鼠桂鱼</p></div>
+    		</li>
+    		<li><img src="img/su2.jpg" class="tu">
+    			<div><p>盐水鸭</p></div>
+    		</li>
+    		<li><img src="img/su3.jpg" class="tu">
+    			<div><p>鸭血粉丝汤</p></div>
+    		</li>
+    		<li><img src="img/su4.jpg" class="tu">
+    			<div><p>酱排骨</p></div>
+    		</li>
+            <li><img src="img/su1.jpg" class="tu">
+                <div><p>松鼠桂鱼</p></div>
+            </li>
+            <li><img src="img/su2.jpg" class="tu">
+                <div><p>盐水鸭</p></div>
+            </li>
+            <li><img src="img/su3.jpg" class="tu">
+                <div><p>鸭血粉丝汤</p></div>
+            </li>
+            <li><img src="img/su4.jpg" class="tu">
+                <div><p>酱排骨</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+    <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">粤菜——广东</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/yue1.jpg" class="tu">
+    			<div><p>明炉烤乳猪</p></div>
+    		</li>
+    		<li><img src="img/yue2.jpg" class="tu">
+    			<div><p>文昌鸡</p></div>
+    		</li>
+    		<li><img src="img/yue3.jpg" class="tu">
+    			<div><p>挂炉烧鹅</p></div>
+    		</li>
+    		<li><img src="img/yue4.jpg" class="tu">
+    			<div><p>雁南飞茶田鸭</p></div>
+    		</li>
+            <li><img src="img/yue1.jpg" class="tu">
+                <div><p>明炉烤乳猪</p></div>
+            </li>
+            <li><img src="img/yue2.jpg" class="tu">
+                <div><p>文昌鸡</p></div>
+            </li>
+            <li><img src="img/yue3.jpg" class="tu">
+                <div><p>挂炉烧鹅</p></div>
+            </li>
+            <li><img src="img/yue4.jpg" class="tu">
+                <div><p>雁南飞茶田鸭</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+     <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">闽菜——福建</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/min1.jpg" class="tu">
+    			<div><p>佛跳墙</p></div>
+    		</li>
+    		<li><img src="img/min2.jpg" class="tu">
+    			<div><p>肉米鱼唇</p></div>
+    		</li>
+    		<li><img src="img/min3.jpg" class="tu">
+    			<div><p>醉排骨</p></div>
+    		</li>
+    		<li><img src="img/min4.jpg" class="tu">
+    			<div><p>翡翠珍珠鲍</p></div>
+    		</li>
+            <li><img src="img/min1.jpg" class="tu">
+                <div><p>佛跳墙</p></div>
+            </li>
+            <li><img src="img/min2.jpg" class="tu">
+                <div><p>肉米鱼唇</p></div>
+            </li>
+            <li><img src="img/min3.jpg" class="tu">
+                <div><p>醉排骨</p></div>
+            </li>
+            <li><img src="img/min4.jpg" class="tu">
+                <div><p>翡翠珍珠鲍</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+     <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">浙菜——浙江</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/zhe1.jpg" class="tu">
+    			<div><p>西湖醋鱼</p></div>
+    		</li>
+    		<li><img src="img/zhe2.jpg" class="tu">
+    			<div><p>龙井虾仁</p></div>
+    		</li>
+    		<li><img src="img/zhe3.jpg" class="tu">
+    			<div><p>东坡肉</p></div>
+    		</li>
+    		<li><img src="img/zhe4.jpg" class="tu">
+    			<div><p>赛蟹羹</p></div>
+    		</li>
+            <li><img src="img/zhe1.jpg" class="tu">
+                <div><p>西湖醋鱼</p></div>
+            </li>
+            <li><img src="img/zhe2.jpg" class="tu">
+                <div><p>龙井虾仁</p></div>
+            </li>
+            <li><img src="img/zhe3.jpg" class="tu">
+                <div><p>东坡肉</p></div>
+            </li>
+            <li><img src="img/zhe4.jpg" class="tu">
+                <div><p>赛蟹羹</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+     <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">湘菜——湖南</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/xiang1.jpg" class="tu">
+    			<div><p>剁椒鱼头</p></div>
+    		</li>
+    		<li><img src="img/xiang2.jpg" class="tu">
+    			<div><p>酱板鸭</p></div>
+    		</li>
+    		<li><img src="img/xiang3.jpg" class="tu">
+    			<div><p>辣子鸡</p></div>
+    		</li>
+    		<li><img src="img/xiang4.jpg" class="tu">
+    			<div><p>毛氏红烧肉</p></div>
+    		</li>
+            <li><img src="img/xiang1.jpg" class="tu">
+                <div><p>剁椒鱼头</p></div>
+            </li>
+            <li><img src="img/xiang2.jpg" class="tu">
+                <div><p>酱板鸭</p></div>
+            </li>
+            <li><img src="img/xiang3.jpg" class="tu">
+                <div><p>辣子鸡</p></div>
+            </li>
+            <li><img src="img/xiang4.jpg" class="tu">
+                <div><p>毛氏红烧肉</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+     <div class="container">
+        <h2 class="title">
+            美食
+            <p class="small">徽菜——安徽</p>
+        </h2>
+    </div>
+    <div class="container">
+        <div class="tuileft" style="margin-left: 0px;">
+    	<ul class="one clear">
+    		<li><img src="img/hui1.jpg" class="tu">
+    			<div><p>火腿炖甲鱼</p></div>
+    		</li>
+    		<li><img src="img/hui2.jpg" class="tu">
+    			<div><p>雪冬烧山鸡</p></div>
+    		</li>
+    		<li><img src="img/hui3.jpg" class="tu">
+    			<div><p>清炖马蹄鳖</p></div>
+    		</li>
+    		<li><img src="img/hui4.jpg" class="tu">
+    			<div><p>问政山笋</p></div>
+    		</li>
+            <li><img src="img/hui1.jpg" class="tu">
+                <div><p>火腿炖甲鱼</p></div>
+            </li>
+            <li><img src="img/hui2.jpg" class="tu">
+                <div><p>雪冬烧山鸡</p></div>
+            </li>
+            <li><img src="img/hui3.jpg" class="tu">
+                <div><p>清炖马蹄鳖</p></div>
+            </li>
+            <li><img src="img/hui4.jpg" class="tu">
+                <div><p>问政山笋</p></div>
+            </li>
+    	</ul>
+    </div>
+    </div>
+    <div class="footer">
+        <h4>声明</h4>
+        <p>菜系顺序部分前后，作者随意排版</p>
+        <p>图片均来源于网络</p>
+        <p>作者：河北师范大学  软件学院  曹波  2019012382</p>
+    </div>
+    <!-- 推荐 -->
+    <script>
+        // var tui = document.getElementById('tui');
+        var tuileft = document.getElementsByClassName('tuileft');
+        var timeleft0 = setInterval(function(){
+        tuileft[0].style.marginLeft = parseInt(tuileft[0].style.marginLeft) - 1 + 'px';
+            if(parseInt(tuileft[0].style.marginLeft) == -1202){
+                tuileft[0].style.marginLeft = 0 + 'px';
+            }
+        },20)
+        var timeleft1 = setInterval(function(){
+            tuileft[2].style.marginLeft = parseInt(tuileft[2].style.marginLeft) - 1 + 'px';
+                if(parseInt(tuileft[2].style.marginLeft) == -1202){
+                    tuileft[2].style.marginLeft = 0 + 'px';
+                }
+            },20)
+        var timeleft2 = setInterval(function(){
+        tuileft[4].style.marginLeft = parseInt(tuileft[4].style.marginLeft) - 1 + 'px';
+            if(parseInt(tuileft[4].style.marginLeft) == -1202){
+                tuileft[4].style.marginLeft = 0 + 'px';
+            }
+        },20)
+        var timeleft3 = setInterval(function(){
+            tuileft[6].style.marginLeft = parseInt(tuileft[6].style.marginLeft) - 1 + 'px';
+                if(parseInt(tuileft[6].style.marginLeft) == -1202){
+                    tuileft[6].style.marginLeft = 0 + 'px';
+                }
+            },20)
+        tuileft[1].style.marginLeft = -1202 + 'px';
+        var timeright0 = setInterval(function(){
+            tuileft[1].style.marginLeft = parseInt(tuileft[1].style.marginLeft) + 1 + 'px';
+            if(parseInt(tuileft[1].style.marginLeft) == 0){
+                tuileft[1].style.marginLeft = -1202 + 'px';
+            }
+        },20)
+        tuileft[3].style.marginLeft = -1202 + 'px';
+        var timeright1 = setInterval(function(){
+            tuileft[3].style.marginLeft = parseInt(tuileft[3].style.marginLeft) + 1 + 'px';
+            if(parseInt(tuileft[3].style.marginLeft) == 0){
+                tuileft[3].style.marginLeft = -1202 + 'px';
+            }
+        },20)
+        tuileft[5].style.marginLeft = -1202 + 'px';
+        var timeright2 = setInterval(function(){
+            tuileft[5].style.marginLeft = parseInt(tuileft[5].style.marginLeft) + 1 + 'px';
+            if(parseInt(tuileft[5].style.marginLeft) == 0){
+                tuileft[5].style.marginLeft = -1202 + 'px';
+            }
+        },20)
+        tuileft[7].style.marginLeft = -1202 + 'px';
+        var timeright3 = setInterval(function(){
+            tuileft[7].style.marginLeft = parseInt(tuileft[7].style.marginLeft) + 1 + 'px';
+            if(parseInt(tuileft[7].style.marginLeft) == 0){
+                tuileft[7].style.marginLeft = -1202 + 'px';
+            }
+        },20)
+    </script>
+    <!-- 轮播图 -->
+    <script>
+        var box = document.getElementById('box');
+        var oNavlist = document.getElementById('nav').children;
+        var slider = document.getElementById('slider');
+        var left = document.getElementById('left');
+        var right = document.getElementById('right');
+        var index = 1;
+        var timer;
+        var isMoving = false;
+        box.onmouseover = function(){
+            animate(left,{opacity:50})
+            animate(right,{opacity:50})
+            clearInterval(timer)
+        }
+        box.onmouseout = function(){
+            animate(left,{opacity:0})
+            animate(right,{opacity:0})
+            timer = setInterval(next, 3000);
+        }
+        right.onclick = next;
+        left.onclick = prev;
+        for( var i=0; i<oNavlist.length; i++ ){
+            oNavlist[i].index = i;
+            oNavlist[i].onclick = function(){
+                index = this.index+1;
+                navmove();
+                animate(slider,{left:-1200*index});
+            }
+        }
+        function next(){
+            if(isMoving){
+                return;
+            }
+            isMoving = true;
+            index++;
+            navmove();
+            animate(slider,{left:-1200*index},function(){
+                if(index==9){
+                    slider.style.left = '-1200px';
+                    index = 1;
+                }
+                isMoving = false;
+            });
+        }
+        function prev(){
+            if(isMoving){
+                return;
+            }
+            isMoving = true;
+            index--;
+            navmove();
+            animate(slider,{left:-1200*index},function(){
+                if(index==0){
+                    slider.style.left = '-6000px';
+                    index = 8;
+                }
+                isMoving = false;
+            });
+        }
+        function navmove(){
+            for( var i=0; i<oNavlist.length; i++ ){
+                oNavlist[i].className = "";
+            }
+            if(index >8 ){
+                oNavlist[0].className = "active";
+            }else if(index<=0){
+                oNavlist[7].className = "active";
+            }else {
+                oNavlist[index-1].className = "active";
+            }
+        }
+        timer = setInterval(next, 3000);
+    </script>
+    <!-- 跳方块 -->
+    <script>
+            var tiao = document.getElementById('tiao');
+            var maxTop = document.body.clientHeight - 100;
+            var maxLeft = document.body.clientWidth - 100;
+            var speedY = 2; 
+            var speedX = 3; 
+            function move(){
+                var curLeft = parseInt( getStyle(tiao,'left') );
+                var curTop = parseInt( getStyle(tiao,'top') );
+
+                if(curTop > maxTop || curTop<0){
+                    speedY = -speedY;
+                }
+                if(curLeft > maxLeft || curLeft<0){
+                    speedX = -speedX;
+                }
+                tiao.style.left = curLeft + speedX + 'px';  
+                tiao.style.top = curTop + speedY + 'px';  
+            }            
+            var id = setInterval(move,50);
+            tiao.onmouseout = function(){
+                id = setInterval(move,50)
+            }
+            tiao.onmouseover = function(){
+                clearInterval(id)
+            }
+            tiao.onclick = function(){
+                document.body.removeChild(this);
+            }
+            function getStyle(obj,attr){
+                if(obj.currentStyle){
+                    return obj.currentStyle[attr];
+                }else{
+                    return getComputedStyle(obj)[attr]
+                }
+            }
+        </script>
+</body>
+</html>
